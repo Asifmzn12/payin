@@ -434,6 +434,19 @@ body {
     }
 
 }
+/* one plus */
+
+@media only screen and (min-width: 360px) and (max-width: 420px) {
+    .form {
+        height: 600px;
+    }
+
+    .customwidth {
+        margin-top: -200px;
+    }
+
+}
+
 
 @media only screen and (min-width: 320px) and (max-width: 374px) {
     .form {
@@ -463,7 +476,7 @@ body {
 
 @media only screen and (min-width: 411px) and (max-width: 823px) {
     .form {
-        height: 450px;
+        height: 230px;
     }
 
     .customwidth {
