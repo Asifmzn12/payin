@@ -419,7 +419,9 @@ body {
     margin-block: 6px;
 }
 
-
+.paymentTitle{
+    margin-top: -30px;
+}
 
 
 @media only screen and (min-width: 1025px) {
@@ -461,7 +463,7 @@ body {
 
 @media only screen and (min-width: 411px) and (max-width: 823px) {
     .form {
-        height: 200px;
+        height: 230px;
     }
 
     .customwidth {
