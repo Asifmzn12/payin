@@ -481,10 +481,10 @@ body {
     }
 
     .customwidth {
-        margin-top: -280px;
+        margin-top: -200px;
     }
     .paymentTitle{
-        margin-top: -60px;
+        margin-top: -30px;
     }
 }
 @media only screen and (min-width: 375px) and (max-width: 412px) {
