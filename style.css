@@ -456,7 +456,7 @@ body {
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
     .form {
-        height:700px;
+        height:800px;
     }
     .paymentTitle{
         margin-top: -10px;
