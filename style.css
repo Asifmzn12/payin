@@ -458,11 +458,11 @@ body {
 
 @media only screen and (min-width: 411px) and (max-width: 823px) {
     .form {
-        height: 100vh;
+        height: 200vh;
     }
 
     .customwidth {
-        margin-top: -200px;
+        margin-top: -1oopx;
     }
 }
 
