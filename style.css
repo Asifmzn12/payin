@@ -408,7 +408,7 @@ body {
 } */
 
 #amountInput {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -488,8 +488,8 @@ body {
 }
 
 
-/* 
-@media only screen and (min-width: 375px) and (max-width: 412px) {
+
+/* @media only screen and (min-width: 375px) and (max-width: 412px) {
     .form {
         height: 630px;
     }
@@ -505,7 +505,7 @@ body {
 
 
 
-/* 
+
 @media only screen and (min-width: 411px) and (max-width: 823px) {
     .form {
         height: 230px;
@@ -518,7 +518,7 @@ body {
    .paymentTitle{
     margin-top: -30px;
    }
-} */
+}
 
 
 
