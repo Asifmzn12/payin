@@ -456,11 +456,11 @@ body {
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
     .form {
-        height: 600px;
+        height: 100vh;
     }
 
     .customwidth {
-        margin-top: -200px;
+        margin-top: -320px;
     }
 }
 
