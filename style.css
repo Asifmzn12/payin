@@ -450,16 +450,16 @@ body {
     }
 
     .customwidth {
-        margin-top: -200px;
+        margin-top: -300px;
     }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
     .form {
-        height:300px;
+        height:600px;
     }
     .paymentTitle{
-        margin-top: -30px;
+        margin-top: -200px;
     }
 
     .customwidth {
