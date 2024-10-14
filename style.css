@@ -456,10 +456,10 @@ body {
 
 @media only screen and (min-width: 375px) and (max-width: 812px) {
     .form {
-        height: 87vh;
+        height: 90vh;
     }
     .paymentTitle{
-        margin-top: -200px;
+        margin-top: -57px;
     }
 
     .customwidth {
