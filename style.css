@@ -459,10 +459,10 @@ body {
     }
 
 }
-
-@media only screen and (min-width: 375px) and (max-width: 414px) {
+/* Iphone */
+@media only screen and (min-width: 360px) and (max-width: 420px) {
     .form {
-        height: 770px;
+        height: 630px;
     }
 
     .customwidth {
@@ -472,6 +472,8 @@ body {
         margin-top: -60px;
     }
 }
+
+
 
 
 
