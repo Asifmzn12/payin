@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>PayIn</title>
+</head>
+
+<body>
+    <section id="payment" class="overflow-hidden">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="payinHome">
+
+
+                        <div class="login_form">
+                            <form action="#" class="form">
+                                <div class="form_title">
+                                    <div class="mb-3">
+                                        <h4 class="text-center">Payment</h4>
+                                    </div>
+                                </div>
+
+                                <div class="form_div customwidth">
+                                    <div
+                                        class="position-relative text-center d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-indian-rupee-sign repuess"></i>
+                                        <input type="text" id="amountInput"
+                                            class="form_input border-0 w-0 mb-0 fw-semibold text-muted" placeholder="0"
+                                            style="width: 18%;" oninput="checkAmount()" maxlength="6">
+                                    </div>
+                                    <span class="rupessChar d-block text-center errorInfo ">One Hundred </span>
+
+                                    <div class="inputmsg text-center">
+                                        <input type="text" class="" placeholder="Add Message">
+                                    </div>
+
+
+                                </div>
+                                <div class="mb-4">
+                                    <div id="captcha" class="form_div">
+                                        <div class="preview"></div>
+                                        <div class="captcha_form">
+                                            <input type="text" id="captcha_form" class="form_input_captcha"
+                                                placeholder=" ">
+                                            <label class="form_label_captcha">Enter Captcha</label>
+                                            <button class="captcha_refersh" disabled>
+                                                <i class="fa fa-refresh"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary procced w-100" onclick="showSpinner(this)" disabled>
+                                        <i class="fa-solid fa-circle-check me-2 "></i>Proceed Securely</button>
+
+                                </div>
+                                <div class="PaymentBox d-none">
+                                    <p class="mt-2 mb-0">Pay Amount From</p>
+                                    <div class="captchaBox position-relative w-100 text-center">
+
+
+                                        <img src="QR.png" class="img-fluid qrImage">
+                                        <button class="payBtn btn btn-primary" disabled>Pay Through QR</button>
+                                    </div>
+
+                                    <div class="PaymentMethods">
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item d-none">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="false" aria-controls="collapseOne" disabled>
+                                                        <img src="CreditCard.svg" class="img-fluid me-2"> Debit/Credit
+                                                        Card
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <p>Debit/Credit Card</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item d-none">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo" disabled>
+                                                        <img src="Bank.svg" class="img-fluid me-2"> Net Banking
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <p>Net Banking</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item d-none">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                        aria-expanded="false" aria-controls="collapseThree" disabled>
+                                                        <img src="PaypalLogo.svg" class="img-fluid me-2"> Paypal
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <p>Paypal</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                        aria-expanded="false" aria-controls="collapseFour" disabled>
+                                                        <img src="CurrencyInr.svg" class="img-fluid me-2"> UPI
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseFour" class="accordion-collapse collapse"
+                                                    data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <div class="intentBox">
+                                                            <ul class="list-unstyled d-flex gap-3 intentApps mb-0">
+                                                                <li><a href="#" disabled><img src="gpay.svg"
+                                                                            class="img-fluid"></a></li>
+                                                                <li><a href="#" disabled><img src="paytm.svg"
+                                                                            class="img-fluid"></a></li>
+                                                                <li><a href="#" disabled><img src="phonepay.svg"
+                                                                            class="img-fluid"></a></li>
+                                                                <li><a href="#" disabled><img src="amazon.svg"
+                                                                            class="img-fluid"></a></li>
+                                                                <li><a href="#" disabled><img src="Bhim.svg"
+                                                                            class="img-fluid"></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="line">
+                                        <span class="text-muted fw-semibold">OR</span>
+                                    </div>
+
+                                    <div class="mt-2 mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-9 pe-0">
+                                                <div class="form_div">
+                                                    <input type="text" class="form_input mb-0 pe-0" placeholder=" ">
+                                                    <label class="form_label">Enter UPI ID</label>
+                                                    <span class="erorInfo d-none"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <button class="btn btn-primary w-100 verBtn" disabled>Verify</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.querySelector('.payBtn').addEventListener('click', function () {
+            document.querySelector('.qrImage').classList.add('active');
+            this.classList.add('hidden');
+        });
+
+    </script>
+    <script>
+        function checkAmount() {
+            const amountInput = document.getElementById('amountInput').value;
+            const allButtonsAndLinks = document.querySelectorAll('button, a');
+
+            if (amountInput !== '' && Number(amountInput) < 100) {
+                allButtonsAndLinks.forEach(element => {
+                    element.disabled = true;
+                });
+            } else {
+                allButtonsAndLinks.forEach(element => {
+                    element.disabled = false;
+                });
+            }
+        }
+    </script>
+
+    <script>
+        function checkAmount() {
+            const input = document.getElementById('amountInput');
+            const allButtonsAndLinks = document.querySelectorAll('button, a');
+
+
+            input.value = input.value.replace(/[^0-9]/g, '');
+
+
+            if (input.value.length > 6) {
+                input.value = input.value.slice(0, 6);
+            }
+
+            const amountValue = input.value;
+            const amount = Number(amountValue);
+
+
+            const textLength = amountValue.length;
+            const newWidth = textLength >= 3 ? (23 + textLength + 4) : 23;
+            input.style.width = newWidth + "%";
+
+
+            if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
+
+                allButtonsAndLinks.forEach(element => {
+                    element.disabled = false;
+                });
+            } else {
+
+                allButtonsAndLinks.forEach(element => {
+                    element.disabled = true;
+                });
+            }
+        }
+
+
+        document.getElementById('amountInput').addEventListener('keypress', function (e) {
+            if (e.key < '0' || e.key > '9') {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+<script>
+    function showSpinner(button) {
+       
+        button.disabled = true;
+
+       
+        const icon = button.querySelector('.procced');
+        button.innerHTML = '';
+
+      
+        const spinner = document.createElement('div');
+        spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-white');
+        spinner.setAttribute('role', 'status');
+        spinner.innerHTML = '<span class="sr-only">Loading...</span>';
+
+        button.appendChild(spinner);
+    }
+</script>
+</body>
+
+</html>
