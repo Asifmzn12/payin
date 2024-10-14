@@ -463,7 +463,7 @@ body {
 
 @media only screen and (min-width: 411px) and (max-width: 823px) {
     .form {
-        height: 230px;
+        height: 450px;
     }
 
     .customwidth {
