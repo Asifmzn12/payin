@@ -501,19 +501,6 @@ body {
         margin-top: -60px;
     }
 }
-@media only screen and (max-width: 375px) {
-    .form {
-        height: 630px;
-    }
-
-    .customwidth {
-        margin-top: -280px;
-    }
-    .paymentTitle{
-        margin-top: -60px;
-    }
-}
-
 
 
 
