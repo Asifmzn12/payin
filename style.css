@@ -459,20 +459,60 @@ body {
     }
 
 }
-/* Iphone 15 */
-@media only screen and (min-width: 360px) and (max-width: 420px) {
+/* 2 one plus */
+@media only screen and (min-width: 375px) and (max-width: 430px) {
     .form {
-        height: 670px;
+        height: 700px;
     }
 
     .customwidth {
-        margin-top: -280px;
+        margin-top: -200px;
     }
     .paymentTitle{
         margin-top: -30px;
     }
 }
 
+/* Iphone 15 */
+@media only screen and (min-width: 360px) and (max-width: 420px) {
+    .form {
+        height: 630px;
+    }
+
+    .customwidth {
+        margin-top: -280px;
+    }
+    .paymentTitle{
+        margin-top: -60px;
+    }
+}
+
+
+
+@media only screen and (min-width: 375px) and (max-width: 412px) {
+    .form {
+        height: 630px;
+    }
+
+    .customwidth {
+        margin-top: -280px;
+    }
+    .paymentTitle{
+        margin-top: -60px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .form {
+        height: 630px;
+    }
+
+    .customwidth {
+        margin-top: -280px;
+    }
+    .paymentTitle{
+        margin-top: -60px;
+    }
+}
 
 
 
