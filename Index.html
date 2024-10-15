@@ -309,17 +309,13 @@ input.addEventListener('input', function() {
     </script>
 
 <script>
-
-    
+ 
     function showSpinner(button) {
-       
         button.disabled = true;
 
        
-        const icon = button.querySelector('.procced');
         button.innerHTML = '';
 
-      
         const spinner = document.createElement('div');
         spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-white');
         spinner.setAttribute('role', 'status');
@@ -327,7 +323,17 @@ input.addEventListener('input', function() {
 
         button.appendChild(spinner);
     }
+
+  
+    document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
+        const button = document.querySelector('.procced');
+        button.disabled = false; 
+        button.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i>Proceed Securely'; 
+    });
+
+  
 </script>
+
 <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: "en,fr,ar,es", layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
@@ -351,35 +357,35 @@ input.addEventListener('input', function() {
     </script>
    <script>
     window.onload = function() {
-      // Function to change the text in the span element
+    
       function changeLanguageText() {
         var interval = setInterval(function() {
           var spanElement = document.querySelector('.VIpgJd-ZVi9od-xl07Ob-lTBxed span');
           if (spanElement) {
             spanElement.innerHTML = "LNG";
-            clearInterval(interval);  // Stop the interval once the text is changed
+            clearInterval(interval); 
           }
-        }, 400); // Check every 400ms
+        }, 400); 
       }
   
-      // MutationObserver to detect changes in the DOM when Google Translate renders
+    
       var targetNode = document.getElementById('google_translate_element');
       
       if (targetNode) {
         var observer = new MutationObserver(function(mutations) {
           mutations.forEach(function(mutation) {
-            changeLanguageText(); // Call the function to update the text when mutations occur
+            changeLanguageText(); 
           });
         });
   
-        // Observer configuration
+      
         var config = { childList: true, subtree: true };
         
-        // Start observing the target node for changes
+  
         observer.observe(targetNode, config);
       }
   
-      // Run initially in case the span is ready right after page load
+      
       changeLanguageText();
     };
   </script>
