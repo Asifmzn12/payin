@@ -230,9 +230,18 @@
             const amount = Number(amountValue);
 
 
-            const textLength = amountValue.length;
-            const newWidth = textLength >= 3 ? (23 + textLength + 10) : 23;
-            input.style.width = newWidth + "%";
+            // const textLength = amountValue.length;
+            // var newWidth;
+            // if(textLength>2){
+            //     newWidth = 23 + textLength + 6;
+            // }else if(textLength===4||textLength===3){
+            //      newWidth = 23 + textLength + 8;
+            // }else if(textLength===6||textLength===5){
+            //      newWidth = 23 + textLength + 10;
+            // }   else{
+            //     newWidth = 23;
+            // }
+            // input.style.width = newWidth + "%";
 
 
             if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
@@ -254,9 +263,26 @@
                 e.preventDefault();
             }
         });
+        
+        const input = document.getElementById('amountInput');
+
+input.addEventListener('input', function() {
+  const length = input.value.length;
+
+  var newWidth;
+  if(length<=3){
+    newWidth = Math.max(55, length * 35); // Base width 150px, increase by 10px per character
+
+  }else{
+  newWidth = Math.max(55, length * 24); // Base width 150px, increase by 10px per character
+  }
+  input.style.width = newWidth + 'px';
+});
     </script>
 
 <script>
+
+    
     function showSpinner(button) {
        
         button.disabled = true;
