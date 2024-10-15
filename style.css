@@ -481,14 +481,14 @@ body {
 /* Iphone 15 */
 @media only screen and (min-width: 360px) and (max-width: 420px) {
     .form {
-        height: 100vh;
+        height: 630px;
     }
 
     .customwidth {
-        margin-top: -180px;
+        margin-top: -280px;
     }
     .paymentTitle{
-        margin-top: 0x;
+        margin-top: -60px;
     }
 }
 
