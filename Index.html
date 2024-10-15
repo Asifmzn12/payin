@@ -82,7 +82,7 @@
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="paymentintentLabel">Pay <i
                                                 class="fa-solid fa-indian-rupee-sign"></i> 5555 from</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                        <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#Sure"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body small d-flex justify-content-center align-items-center">
@@ -202,17 +202,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-                            </form>
+                             </form>
                         </div>
 
 
@@ -225,7 +215,7 @@
 
     <!-- Reciept -->
     <div class="modal fade" id="Sucesspopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" id="modal-print-content">
                 <div class="modal-head modal-header">                
                     <button type="button" class="btn-close close-modal-button" data-bs-dismiss="modal" aria-label="Close">
@@ -286,6 +276,25 @@
         </div>
     </div>
     
+    <!-- Yes Or No Modal -->
+    <div class="modal fade" id="Sure" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <p>If you close this tab you need to enter amount again. </p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -322,6 +331,8 @@
     </script>
 
 <script>
+    let isModalOpen = false; // Flag to check if the modal is open
+
     function checkAmount() {
         const input = document.getElementById('amountInput');
         const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
@@ -367,22 +378,43 @@
         checkAmount();
     });
 
-    // Reset input field and the "Proceed" button state when the offcanvas is hidden
+    // Show modal when the offcanvas is hidden
     document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
-        const input = document.getElementById('amountInput');
-        const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
+        if (!isModalOpen) { // Only proceed if the modal is not already open
+            const input = document.getElementById('amountInput');
+            const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
 
-        // Reset input value and width
-        input.value = '';
-        input.style.width = '55px'; // Reset width to initial value
+            // Reset input value and width
+            input.value = '';
+            input.style.width = '55px'; // Reset width to initial value
 
-        // Always disable the "Proceed" button if input is empty or less than 100
-        proceedButton.disabled = true; // Disable the "Proceed" button
+            // Always disable the "Proceed" button if input is empty or less than 100
+            proceedButton.disabled = true; // Disable the "Proceed" button
 
-        // Refresh the page when the offcanvas is closed
+            // Show the modal
+            const modal = new bootstrap.Modal(document.getElementById('Sure'));
+            modal.show(); // Open the modal
+            isModalOpen = true; // Set the flag to indicate the modal is open
+        } else {
+            // Prevent offcanvas from closing if modal is open
+            const offcanvas = document.getElementById('paymentintent');
+            const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+            bsOffcanvas.show(); // Show the offcanvas again
+        }
+    });
+
+    // Listen for the modal hidden event to reset the flag
+    document.getElementById('Sure').addEventListener('hidden.bs.modal', function () {
+        isModalOpen = false; // Reset the flag when the modal is closed
+    });
+
+    // Handle "Understood" button click to refresh the page
+    document.querySelector('#Sure .btn-primary').addEventListener('click', function () {
         location.reload(); // Refresh the page
     });
 </script>
+
+
 
 
 
