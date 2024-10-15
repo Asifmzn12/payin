@@ -602,3 +602,6 @@ body {
 .modal .modal-header{
     border: 0;
 }
+.details p{
+    margin-bottom: 0;
+}
