@@ -241,7 +241,7 @@
                     <div class="reciept">
                         <div class="topBox bordrbtm">
                           
-                                <p class="mb-0">Amount</p>
+                                <p class="mb-0 fw-bold">Amount</p>
                                 <div class="d-flex gap-2 align-items-center">
                                     <p class="amount mb-0 " id="txnAmount"><i class="fa-solid fa-indian-rupee-sign repuess me-1"></i>
                                         2590 </p> 
@@ -254,7 +254,7 @@
 
                         <div class="Secondbox bordrbtm">
                             <p class="fw-bold">From</p>
-                             <p class="fw-bold"> Shahanshah Khan </p>
+                             <p class="text-muted"> Shahanshah Khan </p>
                             <p class="upiid amountwords text-muted">UPI ID: shahanshahk062@ptyes</p>
 
 
@@ -262,11 +262,10 @@
                         <div class="thirdBox">
                             <p class="fw-bold">Details</p>
                             <p class="amountwords text-muted">Paid at 03:02PM, 15 Oct 2024</p>
-                            <div class="d-flex justify-content-between">
+                            
                                 <p class="amountwords text-muted">Ref No: HAODA3076240810050736740 </p>
-                                <i class="fa-regular fa-copy"></i>
-                            </div>
-                            <div class="d-flex justify-content-between"> 
+                           
+                            <div class="d-flex gap-1"> 
                                 <p class="amountwords text-muted">UTR No: 458957059539 </p> 
                                 <i class="fa-regular fa-copy"></i>
 
@@ -279,8 +278,10 @@
                     </div>
                 </div>
                 <div class="modal-footer invoicefooter">
-                    <button type="button" class="btn btn-secondary print" download id="btnprint2"><img download
-                            src="reciept.svg" /> Download</button>
+                    <button type="button" class="btn btn-secondary print" id="btnprint2" onclick="downloadImage()">
+                        <img src="reciept.svg" /> Download
+                    </button>
+                    
                 </div>
             </div>
         </div>
@@ -319,6 +320,36 @@
 
 
     <script src="index.js"></script>
+    <script>
+        function downloadImage() {
+            const modalContent = document.getElementById('modal-print-content');
+            const downloadButton = document.getElementsByClassName('modal-footer invoicefooter')[0];
+    
+            // Hide the download button
+            if (downloadButton) {
+                downloadButton.style.display = 'none';
+            }
+    
+            // Generate the canvas from the modal content
+            html2canvas(modalContent).then((canvas) => {
+                // Create a download link for the generated image
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'receipt.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);             
+    
+                // Show the download button again after the image is downloaded
+                if (downloadButton) {
+                    downloadButton.style.display = '';
+                }
+            });
+        }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
