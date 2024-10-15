@@ -552,7 +552,7 @@ body {
       display: inline-block;
       padding:10px 10px !important;
       cursor: pointer;
-      zoom: 1;
+      zoom: 2;
   }
   
   .goog-te-gadget-simple  span {
@@ -563,5 +563,5 @@ body {
     background-color: #fff !important;
   }
   .VIpgJd-ZVi9od-ORHb-OEVmcd{
-    display: none !important;
+    display: none !important ;
   }
