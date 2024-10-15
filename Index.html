@@ -220,7 +220,8 @@
         crossorigin="anonymous"></script>
     <script>
         document.querySelector('.payBtn').addEventListener('click', function (event) {
-        event.stopPropagation();
+            event.preventDefault(); 
+
             document.querySelector('.qrImage').classList.add('active');
             this.classList.add('hidden');
         });
