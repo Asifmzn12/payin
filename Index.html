@@ -25,7 +25,18 @@
                             <form action="#" class="form">
                                 <div class="form_title">
                                     <div class="mb-3">
-                                        <h4 class="text-center paymentTitle">Payment</h4>
+                                        <div class="row justify-content-center align-items-center mb-0 paymentTitle">
+                                            <div class="col-8">
+                                                <h4 class="text-end ">Donation</h4>
+
+                                            </div>
+                                            <div class="col-4">
+                                                <span id="google_translate_element"></span>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -186,6 +197,7 @@
 
 
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -300,6 +312,62 @@ input.addEventListener('input', function() {
         button.appendChild(spinner);
     }
 </script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: "en,fr,ar,es", layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        
+
+  $(document).ready(function(){
+    
+    $('#google_translate_element').bind('DOMNodeInserted', function(event) {
+      $('.goog-te-menu-frame.skiptranslate').load(function(){
+        setTimeout(function(){
+          $('.goog-te-menu-frame.skiptranslate').contents().find('.goog-te-menu2-item-selected .text').html('LANGUAGE');    
+        }, 100);
+      });
+    });
+  });
+    </script>
+   <script>
+    window.onload = function() {
+      // Function to change the text in the span element
+      function changeLanguageText() {
+        var interval = setInterval(function() {
+          var spanElement = document.querySelector('.VIpgJd-ZVi9od-xl07Ob-lTBxed span');
+          if (spanElement) {
+            spanElement.innerHTML = "LNG";
+            clearInterval(interval);  // Stop the interval once the text is changed
+          }
+        }, 400); // Check every 400ms
+      }
+  
+      // MutationObserver to detect changes in the DOM when Google Translate renders
+      var targetNode = document.getElementById('google_translate_element');
+      
+      if (targetNode) {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            changeLanguageText(); // Call the function to update the text when mutations occur
+          });
+        });
+  
+        // Observer configuration
+        var config = { childList: true, subtree: true };
+        
+        // Start observing the target node for changes
+        observer.observe(targetNode, config);
+      }
+  
+      // Run initially in case the span is ready right after page load
+      changeLanguageText();
+    };
+  </script>
+  
 </body>
 
 </html>
