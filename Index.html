@@ -236,20 +236,15 @@
                                 <p class="lefttext">Amount</p>
                                 <p class="righttext amount" id="txnAmount"></p>
                             </div>
-                            <div class="details diff">
-                                <p class="lefttext">Status</p>
-                                <p class="status righttext" id="txnStatus"></p>
+                            <div class="details">
+                                <p class="lefttext">Payment Date</p>
+                                <p class="righttext" id="trxnDate"></p>
                             </div>
+                           
                         </div>
                         <div class="bottomBox">
-                            <div class="details">
-                                <p class="lefttext">Payment invoice no</p>
-                                <p class="righttext" id="lblPaymentinvoiceNo"></p>
-                            </div>
-                            <div class="details">
-                                <p class="lefttext">Service Name</p>
-                                <p class="righttext" id="trxnServiceName"></p>
-                            </div>
+                           
+                           
                             <div class="details">
                                 <p class="lefttext">ReferenceId</p>
                                 <p class="righttext" id="txnRefrenceId"></p>
@@ -258,19 +253,13 @@
                                 <p class="lefttext">UTR No</p>
                                 <p class="righttext" id="txnbankutr"></p>
                             </div>
-                            <div class="details">
-                                <p class="lefttext">Payer Name</p>
-                                <p class="righttext" id="trxnSenderName"></p>
-                            </div>
-                            <div class="details">
-                                <p class="lefttext">Payment Date</p>
-                                <p class="righttext" id="trxnDate"></p>
-                            </div>
+                           
+                           
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer invoicefooter">
-                    <button type="button" class="btn btn-secondary print" id="btnprint2"><img src="reciept.svg" /> Get PDF Receipt</button>
+                    <button type="button" class="btn btn-secondary print" id="btnprint2"><img src="reciept.svg" /> Get  Receipt</button>
                 </div>
             </div>
         </div>
@@ -280,17 +269,25 @@
     <div class="modal fade" id="Sure" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header d-none">
               <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-             <p>If you close this tab you need to enter amount again. </p>
+             <p>If you close this tab you will loose all your data. </p>
 
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Understood</button>
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Keep It</button>
+
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-primary w-100">Discard</button>
+
+                    </div>
+                </div>
             </div>
           </div>
         </div>
