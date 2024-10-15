@@ -91,7 +91,7 @@
 
 
                                                 <img src="QR.png" class="img-fluid qrImage">
-                                                <button class="payBtn btn btn-primary" disabled>Pay Through QR</button>
+                                                <button class="payBtn btn btn-primary" >Pay Through QR</button>
                                             </div>
 
                                             <div class="PaymentMethods">
@@ -321,73 +321,70 @@
         }
     </script>
 
-    <script>
-        // Function to check the input amount and enable/disable buttons and links
-        function checkAmount() {
-            const input = document.getElementById('amountInput');
-            const allButtonsAndLinks = document.querySelectorAll('button, a');
+<script>
+    function checkAmount() {
+        const input = document.getElementById('amountInput');
+        const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
 
-            // Remove non-numeric characters and limit to 6 digits
-            input.value = input.value.replace(/[^0-9]/g, '');
-            if (input.value.length > 6) {
-                input.value = input.value.slice(0, 6);
-            }
-
-            const amountValue = input.value;
-            const amount = Number(amountValue);
-
-            // Enable or disable all buttons and links based on input value
-            if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
-                allButtonsAndLinks.forEach(element => {
-                    element.disabled = false;
-                });
-            } else {
-                allButtonsAndLinks.forEach(element => {
-                    element.disabled = true;
-                });
-            }
+        // Remove non-numeric characters and limit input to 6 digits
+        input.value = input.value.replace(/[^0-9]/g, '');
+        if (input.value.length > 6) {
+            input.value = input.value.slice(0, 6);
         }
 
-        // Restrict input to numeric characters only
-        document.getElementById('amountInput').addEventListener('keypress', function (e) {
-            if (e.key < '0' || e.key > '9') {
-                e.preventDefault();
-            }
-        });
+        const amountValue = input.value;
+        const amount = Number(amountValue);
 
-        // Adjust input field width dynamically based on its value
+        // Enable or disable the "Proceed" button based on the amount
+        if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
+            proceedButton.disabled = false; // Enable "Proceed" button
+        } else {
+            proceedButton.disabled = true; // Disable "Proceed" button
+        }
+    }
+
+    // Restrict input to numeric characters only
+    document.getElementById('amountInput').addEventListener('keypress', function (e) {
+        if (e.key < '0' || e.key > '9') {
+            e.preventDefault();
+        }
+    });
+
+    const input = document.getElementById('amountInput');
+    input.addEventListener('input', function () {
+        const length = input.value.length;
+        let newWidth;
+
+        // Adjust the width of the input field based on its length
+        if (length <= 3) {
+            newWidth = Math.max(55, length * 35);
+        } else {
+            newWidth = Math.max(55, length * 24);
+        }
+        input.style.width = newWidth + 'px';
+
+        // Check the amount after every input
+        checkAmount();
+    });
+
+    // Reset input field and the "Proceed" button state when the offcanvas is hidden
+    document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
         const input = document.getElementById('amountInput');
-        input.addEventListener('input', function () {
-            const length = input.value.length;
-            let newWidth;
+        const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
 
-            // Adjust the width based on the number of digits entered
-            if (length <= 3) {
-                newWidth = Math.max(55, length * 35);  // Wider for fewer digits
-            } else {
-                newWidth = Math.max(55, length * 24);  // Narrower for more digits
-            }
-            input.style.width = newWidth + 'px';
+        // Reset input value and width
+        input.value = '';
+        input.style.width = '55px'; // Reset width to initial value
 
-            // Check the amount after every input
-            checkAmount();
-        });
+        // Always disable the "Proceed" button if input is empty or less than 100
+        proceedButton.disabled = true; // Disable the "Proceed" button
 
-        // Reset input field and button states when the offcanvas is hidden
-        document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
-            const input = document.getElementById('amountInput');
-            const allButtonsAndLinks = document.querySelectorAll('button, a');
+        // Refresh the page when the offcanvas is closed
+        location.reload(); // Refresh the page
+    });
+</script>
 
-            // Reset input value and width
-            input.value = '';  // Clear the input field
-            input.style.width = '55px';  // Reset width to initial value
 
-            // Disable all buttons and links after the offcanvas is closed
-            allButtonsAndLinks.forEach(element => {
-                element.disabled = true;
-            });
-        });
-    </script>
 
 
     <script>
