@@ -605,3 +605,24 @@ body {
 .details p{
     margin-bottom: 0;
 }
+.btn-close:focus{
+    box-shadow: none;
+}
+.amount{
+    font-size: 30px;
+    font-weight: 900;
+}
+.amountwords{
+    font-size: 18px;
+}
+.bordrbtm{
+    border-bottom:1px solid #c3c3c3;
+    margin-bottom: 5px;
+}
+.user{
+    font-size: 25px;
+    font-weight: 500;
+}
+.tickimg{
+    max-width: 30px;
+}

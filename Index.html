@@ -82,8 +82,8 @@
                                     <div class="offcanvas-header">
                                         <h5 class="offcanvas-title" id="paymentintentLabel">Pay <i
                                                 class="fa-solid fa-indian-rupee-sign"></i> 5555 from</h5>
-                                        <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#Sure"
-                                            aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-toggle="modal"
+                                            data-bs-target="#Sure" aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body small d-flex justify-content-center align-items-center">
                                         <div class="PaymentBox">
@@ -91,7 +91,7 @@
 
 
                                                 <img src="QR.png" class="img-fluid qrImage">
-                                                <button class="payBtn btn btn-primary" >Pay Through QR</button>
+                                                <button class="payBtn btn btn-primary">Pay Through QR</button>
                                             </div>
 
                                             <div class="PaymentMethods">
@@ -164,11 +164,18 @@
                                                                 <div class="intentBox">
                                                                     <ul
                                                                         class="list-unstyled d-flex gap-3 intentApps mb-0 justify-content-around">
-                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#Sucesspopup"><img src="gpay.svg"   class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="paytm.svg"  class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="phonepay.svg"  class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="amazon.svg"  class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="Bhim.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" data-bs-toggle="modal"
+                                                                                data-bs-target="#Sucesspopup"><img
+                                                                                    src="gpay.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="paytm.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="phonepay.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="amazon.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="Bhim.svg"
+                                                                                    class="img-fluid"></a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -202,7 +209,7 @@
                                         </div>
                                     </div>
                                 </div>
-                             </form>
+                            </form>
                         </div>
 
 
@@ -214,84 +221,93 @@
     </section>
 
     <!-- Reciept -->
-    <div class="modal fade" id="Sucesspopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="Sucesspopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" id="modal-print-content">
-                <div class="modal-head modal-header">                
-                    <button type="button" class="btn-close close-modal-button" data-bs-dismiss="modal" aria-label="Close">
-                        
+                <div class="modal-head modal-header">
+                    <button type="button" class="btn-close close-modal-button" data-bs-dismiss="modal"
+                        aria-label="Close">
+
                     </button>
                 </div>
-                <div class="d-flex flex-column gap-2" id="statusdiv">
-                 <div class="invoiceLogo">
-                    <img src="paymentsuccess.svg" class="img-fluid" />
+                <div class="d-flex flex-column gap-2 d-none" id="statusdiv ">
+                    <div class="invoiceLogo">
+                        <img src="paymentsuccess.svg" class="img-fluid" />
                     </div>
-                    <h3 class="text-center recept">Payment Success !</h3>
-                    <p class="text-center recept">Your payment has been successfully done.</p>
+
                 </div>
                 <div class="modal-body">
-                    <div class="invoicePrint">
-                        <div class="topBox">
-                            <div class="details">
-                                <p class="lefttext">Amount</p>
-                                <p class="righttext amount" id="txnAmount"></p>
-                            </div>
-                            <div class="details">
-                                <p class="lefttext">Payment Date</p>
-                                <p class="righttext" id="trxnDate"></p>
-                            </div>
-                           
+                    <div class="">
+                        <div class="topBox bordrbtm">
+                          
+                                <p class="">Amount</p>
+                                <div class="d-flex gap-2 align-items-center">
+                                    <p class="amount mb-0 " id="txnAmount"><i class="fa-solid fa-indian-rupee-sign repuess me-2"></i>
+                                        2590 </p> 
+                                    <img src="tick-circle.svg" class="img-fluid ms-3 tickimg">
+
+                                </div>
+                                <p class="amountwords">Rupees Two Thousands five Hundred Ninety Only</p>
+                            
                         </div>
-                        <div class="bottomBox">
-                           
-                           
-                            <div class="details">
-                                <p class="lefttext">ReferenceId</p>
-                                <p class="righttext" id="txnRefrenceId"></p>
-                            </div>
-                            <div class="details">
-                                <p class="lefttext">UTR No</p>
-                                <p class="righttext" id="txnbankutr"></p>
-                            </div>
-                           
-                           
+
+                        <div class="Secondbox bordrbtm">
+                            <p>TO</p>
+                            <p class="user">Sender Name</p>
+                            <p>UPI ID:</p>
+
+
                         </div>
+                        <div class="thirdBox">
+                            <p>From</p>
+                            <p class="user">Sender Name</p>
+                            <p>Bank Name</p>
+                            <p>Paid at 03:02PM, 15 Oct 2024</p>
+                            <p>UPI Ref No: 46464664664 </p>
+                            
+
+                        </div>
+                       
                     </div>
                 </div>
                 <div class="modal-footer invoicefooter">
-                    <button type="button" class="btn btn-secondary print" id="btnprint2"><img src="reciept.svg" /> Get  Receipt</button>
+                    <button type="button" class="btn btn-secondary print" download id="btnprint2"><img download
+                            src="reciept.svg" /> Get Receipt</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Yes Or No Modal -->
-    <div class="modal fade" id="Sure" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="Sure" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header d-none">
-              <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-             <p>If you close this tab you will loose all your data. </p>
+            <div class="modal-content">
+                <div class="modal-header d-none">
+                    <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>If you close this tab you will loose all your data. </p>
 
-            </div>
-            <div class="modal-footer d-block">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Keep It</button>
+                </div>
+                <div class="modal-footer d-block">
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Keep
+                                It</button>
 
-                    </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary w-100">Discard</button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-primary w-100">Discard</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 
 
@@ -327,89 +343,89 @@
         }
     </script>
 
-<script>
-    let isModalOpen = false; // Flag to check if the modal is open
+    <script>
+        let isModalOpen = false; // Flag to check if the modal is open
 
-    function checkAmount() {
-        const input = document.getElementById('amountInput');
-        const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
-
-        // Remove non-numeric characters and limit input to 6 digits
-        input.value = input.value.replace(/[^0-9]/g, '');
-        if (input.value.length > 6) {
-            input.value = input.value.slice(0, 6);
-        }
-
-        const amountValue = input.value;
-        const amount = Number(amountValue);
-
-        // Enable or disable the "Proceed" button based on the amount
-        if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
-            proceedButton.disabled = false; // Enable "Proceed" button
-        } else {
-            proceedButton.disabled = true; // Disable "Proceed" button
-        }
-    }
-
-    // Restrict input to numeric characters only
-    document.getElementById('amountInput').addEventListener('keypress', function (e) {
-        if (e.key < '0' || e.key > '9') {
-            e.preventDefault();
-        }
-    });
-
-    const input = document.getElementById('amountInput');
-    input.addEventListener('input', function () {
-        const length = input.value.length;
-        let newWidth;
-
-        // Adjust the width of the input field based on its length
-        if (length <= 3) {
-            newWidth = Math.max(55, length * 35);
-        } else {
-            newWidth = Math.max(55, length * 24);
-        }
-        input.style.width = newWidth + 'px';
-
-        // Check the amount after every input
-        checkAmount();
-    });
-
-    // Show modal when the offcanvas is hidden
-    document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
-        if (!isModalOpen) { // Only proceed if the modal is not already open
+        function checkAmount() {
             const input = document.getElementById('amountInput');
             const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
 
-            // Reset input value and width
-            input.value = '';
-            input.style.width = '55px'; // Reset width to initial value
+            // Remove non-numeric characters and limit input to 6 digits
+            input.value = input.value.replace(/[^0-9]/g, '');
+            if (input.value.length > 6) {
+                input.value = input.value.slice(0, 6);
+            }
 
-            // Always disable the "Proceed" button if input is empty or less than 100
-            proceedButton.disabled = true; // Disable the "Proceed" button
+            const amountValue = input.value;
+            const amount = Number(amountValue);
 
-            // Show the modal
-            const modal = new bootstrap.Modal(document.getElementById('Sure'));
-            modal.show(); // Open the modal
-            isModalOpen = true; // Set the flag to indicate the modal is open
-        } else {
-            // Prevent offcanvas from closing if modal is open
-            const offcanvas = document.getElementById('paymentintent');
-            const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
-            bsOffcanvas.show(); // Show the offcanvas again
+            // Enable or disable the "Proceed" button based on the amount
+            if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
+                proceedButton.disabled = false; // Enable "Proceed" button
+            } else {
+                proceedButton.disabled = true; // Disable "Proceed" button
+            }
         }
-    });
 
-    // Listen for the modal hidden event to reset the flag
-    document.getElementById('Sure').addEventListener('hidden.bs.modal', function () {
-        isModalOpen = false; // Reset the flag when the modal is closed
-    });
+        // Restrict input to numeric characters only
+        document.getElementById('amountInput').addEventListener('keypress', function (e) {
+            if (e.key < '0' || e.key > '9') {
+                e.preventDefault();
+            }
+        });
 
-    // Handle "Understood" button click to refresh the page
-    document.querySelector('#Sure .btn-primary').addEventListener('click', function () {
-        location.reload(); // Refresh the page
-    });
-</script>
+        const input = document.getElementById('amountInput');
+        input.addEventListener('input', function () {
+            const length = input.value.length;
+            let newWidth;
+
+            // Adjust the width of the input field based on its length
+            if (length <= 3) {
+                newWidth = Math.max(55, length * 35);
+            } else {
+                newWidth = Math.max(55, length * 24);
+            }
+            input.style.width = newWidth + 'px';
+
+            // Check the amount after every input
+            checkAmount();
+        });
+
+        // Show modal when the offcanvas is hidden
+        document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
+            if (!isModalOpen) { // Only proceed if the modal is not already open
+                const input = document.getElementById('amountInput');
+                const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
+
+                // Reset input value and width
+                input.value = '';
+                input.style.width = '55px'; // Reset width to initial value
+
+                // Always disable the "Proceed" button if input is empty or less than 100
+                proceedButton.disabled = true; // Disable the "Proceed" button
+
+                // Show the modal
+                const modal = new bootstrap.Modal(document.getElementById('Sure'));
+                modal.show(); // Open the modal
+                isModalOpen = true; // Set the flag to indicate the modal is open
+            } else {
+                // Prevent offcanvas from closing if modal is open
+                const offcanvas = document.getElementById('paymentintent');
+                const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                bsOffcanvas.show(); // Show the offcanvas again
+            }
+        });
+
+        // Listen for the modal hidden event to reset the flag
+        document.getElementById('Sure').addEventListener('hidden.bs.modal', function () {
+            isModalOpen = false; // Reset the flag when the modal is closed
+        });
+
+        // Handle "Understood" button click to refresh the page
+        document.querySelector('#Sure .btn-primary').addEventListener('click', function () {
+            location.reload(); // Refresh the page
+        });
+    </script>
 
 
 
