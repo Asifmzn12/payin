@@ -613,7 +613,9 @@ body {
     font-weight: 900;
 }
 .amountwords{
-    font-size: 18px;
+    font-size: 14px;
+    font-style: italic;
+    color:#c3c3c3;
 }
 .bordrbtm{
     border-bottom:1px solid #c3c3c3;
