@@ -1,5 +1,5 @@
 (function(){
-    const fonts = ["cursive"];
+    const fonts = ["Plus Jakarta Sans"];
     let captchaValue = "";
     
     function gencaptcha() {

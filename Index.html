@@ -69,34 +69,41 @@
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-primary procced w-100" onclick="showSpinner(this)" data-bs-toggle="offcanvas" data-bs-target="#paymentintent" aria-controls="paymentintent" disabled>
+                                    <button class="btn btn-primary procced w-100" onclick="showSpinner(this)"
+                                        data-bs-toggle="offcanvas" data-bs-target="#paymentintent"
+                                        aria-controls="paymentintent" disabled>
                                         <i class="fa-solid fa-circle-check me-2 "></i>Proceed Securely</button>
 
                                 </div>
 
 
-                                <div class="offcanvas offcanvas-bottom" data-bs-backdrop="static" tabindex="-1" id="paymentintent" aria-labelledby="paymentintentLabel">
+                                <div class="offcanvas offcanvas-bottom" data-bs-backdrop="static" tabindex="-1"
+                                    id="paymentintent" aria-labelledby="paymentintentLabel">
                                     <div class="offcanvas-header">
-                                      <h5 class="offcanvas-title" id="paymentintentLabel">Pay <i class="fa-solid fa-indian-rupee-sign"></i> 5555 from</h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <h5 class="offcanvas-title" id="paymentintentLabel">Pay <i
+                                                class="fa-solid fa-indian-rupee-sign"></i> 5555 from</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body small d-flex justify-content-center align-items-center">
                                         <div class="PaymentBox">
-                                            <div class="captchaBox position-relative w-100 text-center">
-        
-        
+                                            <div class="captchaBox position-relative w-100 text-center mb-2">
+
+
                                                 <img src="QR.png" class="img-fluid qrImage">
                                                 <button class="payBtn btn btn-primary" disabled>Pay Through QR</button>
                                             </div>
-        
+
                                             <div class="PaymentMethods">
                                                 <div class="accordion" id="accordionExample">
                                                     <div class="accordion-item d-none">
                                                         <h2 class="accordion-header">
                                                             <button class="accordion-button collapsed" type="button"
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                                aria-expanded="false" aria-controls="collapseOne" disabled>
-                                                                <img src="CreditCard.svg" class="img-fluid me-2"> Debit/Credit
+                                                                aria-expanded="false" aria-controls="collapseOne"
+                                                                disabled>
+                                                                <img src="CreditCard.svg" class="img-fluid me-2">
+                                                                Debit/Credit
                                                                 Card
                                                             </button>
                                                         </h2>
@@ -107,12 +114,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-        
+
                                                     <div class="accordion-item d-none">
                                                         <h2 class="accordion-header">
                                                             <button class="accordion-button collapsed" type="button"
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                                aria-expanded="false" aria-controls="collapseTwo" disabled>
+                                                                aria-expanded="false" aria-controls="collapseTwo"
+                                                                disabled>
                                                                 <img src="Bank.svg" class="img-fluid me-2"> Net Banking
                                                             </button>
                                                         </h2>
@@ -123,12 +131,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-        
+
                                                     <div class="accordion-item d-none">
                                                         <h2 class="accordion-header">
                                                             <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                                aria-expanded="false" aria-controls="collapseThree" disabled>
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseThree" aria-expanded="false"
+                                                                aria-controls="collapseThree" disabled>
                                                                 <img src="PaypalLogo.svg" class="img-fluid me-2"> Paypal
                                                             </button>
                                                         </h2>
@@ -139,12 +148,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-        
+
                                                     <div class="accordion-item">
                                                         <h2 class="accordion-header">
                                                             <button class="accordion-button collapsed " type="button"
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                                                aria-expanded="false" aria-controls="collapseFour" disabled>
+                                                                aria-expanded="false" aria-controls="collapseFour"
+                                                                disabled>
                                                                 <img src="CurrencyInr.svg" class="img-fluid me-2"> UPI
                                                             </button>
                                                         </h2>
@@ -152,17 +162,13 @@
                                                             data-bs-parent="#accordionExample">
                                                             <div class="accordion-body">
                                                                 <div class="intentBox">
-                                                                    <ul class="list-unstyled d-flex gap-3 intentApps mb-0 justify-content-around">
-                                                                        <li><a href="#" disabled><img src="gpay.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="paytm.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="phonepay.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="amazon.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="Bhim.svg"
-                                                                                    class="img-fluid"></a></li>
+                                                                    <ul
+                                                                        class="list-unstyled d-flex gap-3 intentApps mb-0 justify-content-around">
+                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#Sucesspopup"><img src="gpay.svg"   class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="paytm.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="phonepay.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="amazon.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="Bhim.svg"  class="img-fluid"></a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -170,36 +176,41 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                          <div class="upiBox d-none ">
-                                            <div class="line">
-                                                <span class="text-muted fw-semibold">OR</span>
-                                            </div>
-        
-                                            <div class="mt-2 mb-4">
-                                                <div class="row align-items-center">
-                                                    <div class="col-9 pe-0">
-                                                        <div class="form_div">
-                                                            <input type="text" class="form_input mb-0 pe-0" placeholder=" ">
-                                                            <label class="form_label">Enter UPI ID</label>
-                                                            <span class="erorInfo d-none"></span>
+                                            <div class="upiBox d-none ">
+                                                <div class="line">
+                                                    <span class="text-muted fw-semibold">OR</span>
+                                                </div>
+
+                                                <div class="mt-2 mb-4">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-9 pe-0">
+                                                            <div class="form_div">
+                                                                <input type="text" class="form_input mb-0 pe-0"
+                                                                    placeholder=" ">
+                                                                <label class="form_label">Enter UPI ID</label>
+                                                                <span class="erorInfo d-none"></span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <button class="btn btn-primary w-100 verBtn" disabled>Verify</button>
+                                                        <div class="col-3">
+                                                            <button class="btn btn-primary w-100 verBtn"
+                                                                disabled>Verify</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                          </div>
-                                            
+
                                         </div>
                                     </div>
-                                  </div>
-
-                              
-                             
+                                </div>
 
 
-                              
+
+
+
+
+
+
+
 
                             </form>
                         </div>
@@ -212,15 +223,81 @@
         </div>
     </section>
 
+    <!-- Reciept -->
+    <div class="modal fade" id="Sucesspopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modal-print-content">
+                <div class="modal-head modal-header">                
+                    <button type="button" class="btn-close close-modal-button" data-bs-dismiss="modal" aria-label="Close">
+                        
+                    </button>
+                </div>
+                <div class="d-flex flex-column gap-2" id="statusdiv">
+                 <div class="invoiceLogo">
+                    <img src="paymentsuccess.svg" class="img-fluid" />
+                    </div>
+                    <h3 class="text-center recept">Payment Success !</h3>
+                    <p class="text-center recept">Your payment has been successfully done.</p>
+                </div>
+                <div class="modal-body">
+                    <div class="invoicePrint">
+                        <div class="topBox">
+                            <div class="details">
+                                <p class="lefttext">Amount</p>
+                                <p class="righttext amount" id="txnAmount"></p>
+                            </div>
+                            <div class="details diff">
+                                <p class="lefttext">Status</p>
+                                <p class="status righttext" id="txnStatus"></p>
+                            </div>
+                        </div>
+                        <div class="bottomBox">
+                            <div class="details">
+                                <p class="lefttext">Payment invoice no</p>
+                                <p class="righttext" id="lblPaymentinvoiceNo"></p>
+                            </div>
+                            <div class="details">
+                                <p class="lefttext">Service Name</p>
+                                <p class="righttext" id="trxnServiceName"></p>
+                            </div>
+                            <div class="details">
+                                <p class="lefttext">ReferenceId</p>
+                                <p class="righttext" id="txnRefrenceId"></p>
+                            </div>
+                            <div class="details">
+                                <p class="lefttext">UTR No</p>
+                                <p class="righttext" id="txnbankutr"></p>
+                            </div>
+                            <div class="details">
+                                <p class="lefttext">Payer Name</p>
+                                <p class="righttext" id="trxnSenderName"></p>
+                            </div>
+                            <div class="details">
+                                <p class="lefttext">Payment Date</p>
+                                <p class="righttext" id="trxnDate"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer invoicefooter">
+                    <button type="button" class="btn btn-secondary print" id="btnprint2"><img src="reciept.svg" /> Get PDF Receipt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
 
     <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
         document.querySelector('.payBtn').addEventListener('click', function (event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
             document.querySelector('.qrImage').classList.add('active');
             this.classList.add('hidden');
@@ -245,14 +322,13 @@
     </script>
 
     <script>
+        // Function to check the input amount and enable/disable buttons and links
         function checkAmount() {
             const input = document.getElementById('amountInput');
             const allButtonsAndLinks = document.querySelectorAll('button, a');
 
-
+            // Remove non-numeric characters and limit to 6 digits
             input.value = input.value.replace(/[^0-9]/g, '');
-
-
             if (input.value.length > 6) {
                 input.value = input.value.slice(0, 6);
             }
@@ -260,139 +336,142 @@
             const amountValue = input.value;
             const amount = Number(amountValue);
 
-
-            // const textLength = amountValue.length;
-            // var newWidth;
-            // if(textLength>2){
-            //     newWidth = 23 + textLength + 6;
-            // }else if(textLength===4||textLength===3){
-            //      newWidth = 23 + textLength + 8;
-            // }else if(textLength===6||textLength===5){
-            //      newWidth = 23 + textLength + 10;
-            // }   else{
-            //     newWidth = 23;
-            // }
-            // input.style.width = newWidth + "%";
-
-
+            // Enable or disable all buttons and links based on input value
             if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
-
                 allButtonsAndLinks.forEach(element => {
                     element.disabled = false;
                 });
             } else {
-
                 allButtonsAndLinks.forEach(element => {
                     element.disabled = true;
                 });
             }
         }
 
-
+        // Restrict input to numeric characters only
         document.getElementById('amountInput').addEventListener('keypress', function (e) {
             if (e.key < '0' || e.key > '9') {
                 e.preventDefault();
             }
         });
-        
+
+        // Adjust input field width dynamically based on its value
         const input = document.getElementById('amountInput');
+        input.addEventListener('input', function () {
+            const length = input.value.length;
+            let newWidth;
 
-input.addEventListener('input', function() {
-  const length = input.value.length;
+            // Adjust the width based on the number of digits entered
+            if (length <= 3) {
+                newWidth = Math.max(55, length * 35);  // Wider for fewer digits
+            } else {
+                newWidth = Math.max(55, length * 24);  // Narrower for more digits
+            }
+            input.style.width = newWidth + 'px';
 
-  var newWidth;
-  if(length<=3){
-    newWidth = Math.max(55, length * 35); // Base width 150px, increase by 10px per character
-
-  }else{
-  newWidth = Math.max(55, length * 24); // Base width 150px, increase by 10px per character
-  }
-  input.style.width = newWidth + 'px';
-});
-    </script>
-
-<script>
- 
-    function showSpinner(button) {
-        button.disabled = true;
-
-       
-        button.innerHTML = '';
-
-        const spinner = document.createElement('div');
-        spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-white');
-        spinner.setAttribute('role', 'status');
-        spinner.innerHTML = '<span class="sr-only">Loading...</span>';
-
-        button.appendChild(spinner);
-    }
-
-  
-    document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
-        const button = document.querySelector('.procced');
-        button.disabled = false; 
-        button.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i>Proceed Securely'; 
-    });
-
-  
-</script>
-
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: "en,fr,ar,es", layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-    </script>
-    
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        
-
-  $(document).ready(function(){
-    
-    $('#google_translate_element').bind('DOMNodeInserted', function(event) {
-      $('.goog-te-menu-frame.skiptranslate').load(function(){
-        setTimeout(function(){
-          $('.goog-te-menu-frame.skiptranslate').contents().find('.goog-te-menu2-item-selected .text').html('LANGUAGE');    
-        }, 100);
-      });
-    });
-  });
-    </script>
-   <script>
-    window.onload = function() {
-    
-      function changeLanguageText() {
-        var interval = setInterval(function() {
-          var spanElement = document.querySelector('.VIpgJd-ZVi9od-xl07Ob-lTBxed span');
-          if (spanElement) {
-            spanElement.innerHTML = "LNG";
-            clearInterval(interval); 
-          }
-        }, 400); 
-      }
-  
-    
-      var targetNode = document.getElementById('google_translate_element');
-      
-      if (targetNode) {
-        var observer = new MutationObserver(function(mutations) {
-          mutations.forEach(function(mutation) {
-            changeLanguageText(); 
-          });
+            // Check the amount after every input
+            checkAmount();
         });
-  
-      
-        var config = { childList: true, subtree: true };
-        
-  
-        observer.observe(targetNode, config);
-      }
-  
-      
-      changeLanguageText();
-    };
-  </script>
-  
+
+        // Reset input field and button states when the offcanvas is hidden
+        document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
+            const input = document.getElementById('amountInput');
+            const allButtonsAndLinks = document.querySelectorAll('button, a');
+
+            // Reset input value and width
+            input.value = '';  // Clear the input field
+            input.style.width = '55px';  // Reset width to initial value
+
+            // Disable all buttons and links after the offcanvas is closed
+            allButtonsAndLinks.forEach(element => {
+                element.disabled = true;
+            });
+        });
+    </script>
+
+
+    <script>
+        function showSpinner(button) {
+            button.disabled = true;
+
+            button.innerHTML = '';
+
+            const spinner = document.createElement('div');
+            spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-white');
+            spinner.setAttribute('role', 'status');
+            spinner.innerHTML = '<span class="sr-only">Loading...</span>';
+
+            button.appendChild(spinner);
+        }
+
+        document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
+            const button = document.querySelector('.procced');
+            button.disabled = false;
+            button.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i>Proceed Securely';
+
+
+            document.getElementById('amountInput').value = '';
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: "en,fr,ar,es", layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+
+
+        $(document).ready(function () {
+
+            $('#google_translate_element').bind('DOMNodeInserted', function (event) {
+                $('.goog-te-menu-frame.skiptranslate').load(function () {
+                    setTimeout(function () {
+                        $('.goog-te-menu-frame.skiptranslate').contents().find('.goog-te-menu2-item-selected .text').html('LANGUAGE');
+                    }, 100);
+                });
+            });
+        });
+    </script>
+    <script>
+        window.onload = function () {
+
+            function changeLanguageText() {
+                var interval = setInterval(function () {
+                    var spanElement = document.querySelector('.VIpgJd-ZVi9od-xl07Ob-lTBxed span');
+                    if (spanElement) {
+                        spanElement.innerHTML = "LNG";
+                        clearInterval(interval);
+                    }
+                }, 400);
+            }
+
+
+            var targetNode = document.getElementById('google_translate_element');
+
+            if (targetNode) {
+                var observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        changeLanguageText();
+                    });
+                });
+
+
+                var config = { childList: true, subtree: true };
+
+
+                observer.observe(targetNode, config);
+            }
+
+
+            changeLanguageText();
+        };
+    </script>
+
 </body>
 
 </html>
