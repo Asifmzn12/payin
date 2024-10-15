@@ -554,6 +554,9 @@ body {
       cursor: pointer;
       zoom: 0;
   }
+  .offcanvas.offcanvas-bottom{
+    height: 55vh !important;
+  }
   
   .goog-te-gadget-simple  span {
      color:#3e3065 !important;

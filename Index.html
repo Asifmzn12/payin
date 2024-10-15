@@ -27,10 +27,10 @@
                                     <div class="mb-3">
                                         <div class="row justify-content-center align-items-center mb-0 paymentTitle">
                                             <div class="col-8">
-                                                <h4 class="text-end mb-0 ">Donation</h4>
+                                                <h4 class="text-center mb-0 ">Donation</h4>
 
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-4 d-none">
                                                 <span id="google_translate_element"></span>
 
                                             </div>
@@ -69,120 +69,136 @@
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-primary procced w-100" onclick="showSpinner(this)" disabled>
+                                    <button class="btn btn-primary procced w-100" onclick="showSpinner(this)" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" disabled>
                                         <i class="fa-solid fa-circle-check me-2 "></i>Proceed Securely</button>
 
                                 </div>
-                                <div class="PaymentBox d-none">
-                                    <p class="mt-2 mb-0">Pay Amount From</p>
-                                    <div class="captchaBox position-relative w-100 text-center">
 
 
-                                        <img src="QR.png" class="img-fluid qrImage">
-                                        <button class="payBtn btn btn-primary" disabled>Pay Through QR</button>
+                                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                                    <div class="offcanvas-header">
+                                      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Pay amount from</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-
-                                    <div class="PaymentMethods">
-                                        <div class="accordion" id="accordionExample">
-                                            <div class="accordion-item d-none">
-                                                <h2 class="accordion-header">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                        aria-expanded="false" aria-controls="collapseOne" disabled>
-                                                        <img src="CreditCard.svg" class="img-fluid me-2"> Debit/Credit
-                                                        Card
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <p>Debit/Credit Card</p>
-                                                    </div>
-                                                </div>
+                                    <div class="offcanvas-body small">
+                                        <div class="PaymentBox">
+                                            <p class="mt-2 mb-0">Pay Amount From</p>
+                                            <div class="captchaBox position-relative w-100 text-center">
+        
+        
+                                                <img src="QR.png" class="img-fluid qrImage">
+                                                <button class="payBtn btn btn-primary" disabled>Pay Through QR</button>
                                             </div>
-
-                                            <div class="accordion-item d-none">
-                                                <h2 class="accordion-header">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                        aria-expanded="false" aria-controls="collapseTwo" disabled>
-                                                        <img src="Bank.svg" class="img-fluid me-2"> Net Banking
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseTwo" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <p>Net Banking</p>
+        
+                                            <div class="PaymentMethods">
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item d-none">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                                aria-expanded="false" aria-controls="collapseOne" disabled>
+                                                                <img src="CreditCard.svg" class="img-fluid me-2"> Debit/Credit
+                                                                Card
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <p>Debit/Credit Card</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="accordion-item d-none">
-                                                <h2 class="accordion-header">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                        aria-expanded="false" aria-controls="collapseThree" disabled>
-                                                        <img src="PaypalLogo.svg" class="img-fluid me-2"> Paypal
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseThree" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <p>Paypal</p>
+        
+                                                    <div class="accordion-item d-none">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                                aria-expanded="false" aria-controls="collapseTwo" disabled>
+                                                                <img src="Bank.svg" class="img-fluid me-2"> Net Banking
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <p>Net Banking</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                                        aria-expanded="false" aria-controls="collapseFour" disabled>
-                                                        <img src="CurrencyInr.svg" class="img-fluid me-2"> UPI
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseFour" class="accordion-collapse collapse"
-                                                    data-bs-parent="#accordionExample">
-                                                    <div class="accordion-body">
-                                                        <div class="intentBox">
-                                                            <ul class="list-unstyled d-flex gap-3 intentApps mb-0">
-                                                                <li><a href="#" disabled><img src="gpay.svg"
-                                                                            class="img-fluid"></a></li>
-                                                                <li><a href="#" disabled><img src="paytm.svg"
-                                                                            class="img-fluid"></a></li>
-                                                                <li><a href="#" disabled><img src="phonepay.svg"
-                                                                            class="img-fluid"></a></li>
-                                                                <li><a href="#" disabled><img src="amazon.svg"
-                                                                            class="img-fluid"></a></li>
-                                                                <li><a href="#" disabled><img src="Bhim.svg"
-                                                                            class="img-fluid"></a></li>
-                                                            </ul>
+        
+                                                    <div class="accordion-item d-none">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                                aria-expanded="false" aria-controls="collapseThree" disabled>
+                                                                <img src="PaypalLogo.svg" class="img-fluid me-2"> Paypal
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <p>Paypal</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                                aria-expanded="false" aria-controls="collapseFour" disabled>
+                                                                <img src="CurrencyInr.svg" class="img-fluid me-2"> UPI
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <div class="intentBox">
+                                                                    <ul class="list-unstyled d-flex gap-3 intentApps mb-0">
+                                                                        <li><a href="#" disabled><img src="gpay.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="paytm.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="phonepay.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="amazon.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="Bhim.svg"
+                                                                                    class="img-fluid"></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="line">
-                                        <span class="text-muted fw-semibold">OR</span>
-                                    </div>
-
-                                    <div class="mt-2 mb-4">
-                                        <div class="row align-items-center">
-                                            <div class="col-9 pe-0">
-                                                <div class="form_div">
-                                                    <input type="text" class="form_input mb-0 pe-0" placeholder=" ">
-                                                    <label class="form_label">Enter UPI ID</label>
-                                                    <span class="erorInfo d-none"></span>
+        
+                                            <div class="line">
+                                                <span class="text-muted fw-semibold">OR</span>
+                                            </div>
+        
+                                            <div class="mt-2 mb-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-9 pe-0">
+                                                        <div class="form_div">
+                                                            <input type="text" class="form_input mb-0 pe-0" placeholder=" ">
+                                                            <label class="form_label">Enter UPI ID</label>
+                                                            <span class="erorInfo d-none"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <button class="btn btn-primary w-100 verBtn" disabled>Verify</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-3">
-                                                <button class="btn btn-primary w-100 verBtn" disabled>Verify</button>
-                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                  </div>
+
+                              
+                             
+
+
+                              
 
                             </form>
                         </div>
