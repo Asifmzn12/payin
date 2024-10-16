@@ -63,7 +63,7 @@
                                             <input type="number" id="captcha_form" class="form_input_captcha"
                                                 placeholder=" ">
                                             <label class="form_label_captcha">Enter Captcha</label>
-                                            <button class="captcha_refersh" disabled>
+                                            <button class="captcha_refersh" >
                                                 <i class="fa fa-refresh"></i>
                                             </button>
                                         </div>
@@ -151,10 +151,10 @@
 
                                                     <div class="accordion-item">
                                                         <h2 class="accordion-header">
-                                                            <button class="accordion-button collapsed " type="button"
+                                                            <button class="accordion-button " type="button"
                                                                 data-bs-toggle="collapse" data-bs-target="#collapseFour"
                                                                 aria-expanded="false" aria-controls="collapseFour"
-                                                                disabled>
+                                                                >
                                                                 <img src="CurrencyInr.svg" class="img-fluid me-2"> UPI
                                                             </button>
                                                         </h2>
@@ -367,7 +367,7 @@
     <script>
         function checkAmount() {
             const amountInput = document.getElementById('amountInput').value;
-            const allButtonsAndLinks = document.querySelectorAll('button, a');
+            const allButtonsAndLinks = document.querySelectorAll('procced, a');
 
             if (amountInput !== '' && Number(amountInput) < 100) {
                 allButtonsAndLinks.forEach(element => {
@@ -397,11 +397,11 @@
             const amountValue = input.value;
             const amount = Number(amountValue);
 
-            // Enable or disable the "Proceed" button based on the amount
+           
             if (amountValue.length >= 3 && amount >= 100 && amount <= 999999) {
                 proceedButton.disabled = false; // Enable "Proceed" button
             } else {
-                proceedButton.disabled = true; // Disable "Proceed" button
+                proceedButton.disabled = true; 
             }
         }
 
@@ -429,39 +429,14 @@
             checkAmount();
         });
 
-        // Show modal when the offcanvas is hidden
-        document.getElementById('paymentintent').addEventListener('hidden.bs.offcanvas', function () {
-            if (!isModalOpen) { // Only proceed if the modal is not already open
-                const input = document.getElementById('amountInput');
-                const proceedButton = document.querySelector('.procced'); // Select the specific "Proceed" button
 
-                // Reset input value and width
-                input.value = '';
-                input.style.width = '55px'; // Reset width to initial value
-
-                // Always disable the "Proceed" button if input is empty or less than 100
-                proceedButton.disabled = true; // Disable the "Proceed" button
-
-                // Show the modal
-                const modal = new bootstrap.Modal(document.getElementById('Sure'));
-                modal.show(); // Open the modal
-                isModalOpen = true; // Set the flag to indicate the modal is open
-            } else {
-                // Prevent offcanvas from closing if modal is open
-                const offcanvas = document.getElementById('paymentintent');
-                const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
-                bsOffcanvas.show(); // Show the offcanvas again
-            }
-        });
-
-        // Listen for the modal hidden event to reset the flag
         document.getElementById('Sure').addEventListener('hidden.bs.modal', function () {
             isModalOpen = false; // Reset the flag when the modal is closed
         });
 
-        // Handle "Understood" button click to refresh the page
+        
         document.querySelector('#Sure .btn-primary').addEventListener('click', function () {
-            location.reload(); // Refresh the page
+            location.reload(); 
         });
     </script>
 
@@ -470,7 +445,7 @@
 
 
 
-    <script>
+    <!-- <script>
         function showSpinner(button) {
             button.disabled = true;
 
@@ -492,8 +467,8 @@
 
             document.getElementById('amountInput').value = '';
         });
-    </script>
-
+    </script> -->
+<!-- Language Translator -->
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -502,7 +477,8 @@
     </script>
 
     <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
     <script>
 
 
@@ -517,6 +493,9 @@
             });
         });
     </script>
+
+
+<!-- Language Translator -->
     <script>
         window.onload = function () {
 
