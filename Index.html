@@ -164,18 +164,11 @@
                                                                 <div class="intentBox">
                                                                     <ul
                                                                         class="list-unstyled d-flex gap-3 intentApps mb-0 justify-content-around">
-                                                                        <li><a href="#" data-bs-toggle="modal"
-                                                                                data-bs-target="#Sucesspopup"><img
-                                                                                    src="gpay.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="paytm.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="phonepay.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="amazon.svg"
-                                                                                    class="img-fluid"></a></li>
-                                                                        <li><a href="#" disabled><img src="Bhim.svg"
-                                                                                    class="img-fluid"></a></li>
+                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#Sucesspopup"><img src="gpay.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#Transuccess"><img src="paytm.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#failed"><img src="phonepay.svg" class="img-fluid"></a></li>
+                                                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#pending"><img src="amazon.svg"  class="img-fluid"></a></li>
+                                                                        <li><a href="#" disabled><img src="Bhim.svg"  class="img-fluid"></a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -316,7 +309,83 @@
             </div>
         </div>
     </div>
+<!-- Transaction States Modal -->
+<div class="modal fade" id="Transuccess" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header d-none">
+            <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <img src="success3.gif" class="img-fluid success">
+            <p>Transaction Successful </p>
 
+        </div>
+       
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary w-100">Go To Home</button>
+
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</div>
+</div>
+<div class="modal fade" id="failed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header d-none">
+            <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <img src="failed.gif" class="img-fluid success">
+            <p>Transaction Failed </p>
+
+        </div>
+        <div class="modal-footer d-block">
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary w-100">Go To Home</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="pending" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header d-none">
+            <h1 class="modal-title fs-5 visually-hidden" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <img src="pending.gif" class="img-fluid success">
+            <p>Transaction Pending </p>
+
+        </div>
+        <div class="modal-footer d-block">
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary w-100">Go To Home</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Transaction state modal ends here -->
 
 
     <script src="index.js"></script>
@@ -435,9 +504,9 @@
         });
 
         
-        document.querySelector('#Sure .btn-primary').addEventListener('click', function () {
-            location.reload(); 
-        });
+        ['#Sure', '#failed', '#pending', '#Transuccess'].forEach(id => document.querySelector(`${id} .btn-primary`).addEventListener('click', () => location.reload()));
+
+        
     </script>
 
 
