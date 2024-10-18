@@ -20,6 +20,9 @@
     align-items: center;
     height: 100vh;
     background: url("https://sky8pay.net/assets/images/formBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .msgBox h4 {
